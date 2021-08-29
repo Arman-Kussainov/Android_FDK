@@ -1,0 +1,3 @@
+rootProject.name = "ArmanFFT"
+include ':app'
+include ':openCVLibrary343'

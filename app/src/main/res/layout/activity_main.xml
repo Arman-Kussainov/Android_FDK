@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context="com.arman.Android_FDK.MainActivity">
+
+   <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:fillViewport="true"
+        android:scrollbarSize="25sp"
+        android:scrollbars="vertical">
+
+       <LinearLayout
+           android:id="@+id/holds_everything"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_margin="2pt"
+           android:orientation="vertical">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/teal_700">
+
+               <Button
+                   android:id="@+id/button_start"
+                   style="?android:attr/buttonBarButtonStyle"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_marginEnd="1pt"
+                   android:layout_marginBottom="2pt"
+                   android:layout_weight="1"
+                   android:background="@color/black"
+                   android:text="@string/start_backprojection"
+                   android:textColor="@color/white" />
+
+               <Button
+                   android:id="@+id/button_dir"
+                   style="?android:attr/buttonBarButtonStyle"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_marginStart="1pt"
+                   android:layout_marginBottom="2pt"
+                   android:layout_weight="1"
+                   android:background="@color/black"
+                   android:onClick="Cancel_is_Called"
+                   android:text="@string/cancel_backprojection"
+                   android:textColor="@color/white" />
+           </LinearLayout>
+
+           <ImageView
+               android:id="@+id/Pic"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:adjustViewBounds="true"
+               android:scaleType="fitCenter"
+               android:src="@drawable/bw_recording_scheme" />
+
+           <TextView
+               android:id="@+id/projection_count"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center_horizontal"
+               android:text="Check out backprojection parameters below:"
+               android:textColor="@color/white"
+               android:textStyle="bold" />
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/black">
+
+               <TextView
+                   android:id="@+id/SourceToPhantom"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentStart="true"
+                   android:layout_alignParentLeft="true"
+                   android:layout_alignParentTop="true"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:text="@string/Source_To_Phantom"
+                   android:textColor="@color/white"
+                   android:textSize="13sp"
+                   android:textStyle="bold" />
+
+               <EditText
+                   android:id="@+id/SourceToPhantomValue"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/SourceToPhantom"
+                   android:layout_alignEnd="@id/SourceToPhantom"
+                   android:layout_alignParentStart="true"
+                   android:layout_marginStart="5dp"
+                   android:background="@color/white"
+                   android:inputType="number"
+                   android:text="2000"
+                   android:textSize="13sp" />
+
+               <TextView
+                   android:id="@+id/PhantomToDetector"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/SourceToPhantomValue"
+                   android:layout_alignEnd="@id/SourceToPhantom"
+                   android:layout_alignParentStart="true"
+                   android:layout_marginStart="5dp"
+                   android:text="@string/Phantom_To_Detector"
+                   android:textColor="@color/white"
+                   android:textSize="13sp"
+                   android:textStyle="bold" />
+
+               <EditText
+                   android:id="@+id/PhantomToDetectorValue"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/PhantomToDetector"
+                   android:layout_alignEnd="@id/SourceToPhantom"
+                   android:layout_alignParentStart="true"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginBottom="5dp"
+                   android:background="@color/white"
+                   android:inputType="number"
+                   android:text="1040"
+                   android:textSize="13sp" />
+
+               <TextView
+                   android:id="@+id/SliceSize"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_alignTop="@id/SliceSizeValue"
+                   android:layout_alignParentTop="true"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_toEndOf="@+id/SourceToPhantom"
+                   android:text="@string/slice_size"
+                   android:textColor="@color/white"
+                   android:textSize="13sp"
+                   android:textStyle="bold" />
+
+               <EditText
+                   android:id="@+id/SliceSizeValue"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_alignStart="@id/SliceSize"
+                   android:layout_alignBottom="@id/SourceToPhantomValue"
+                   android:background="@color/white"
+                   android:ems="10"
+                   android:inputType="number"
+                   android:text="512"
+                   android:textSize="13sp" />
+
+               <TextView
+                   android:id="@+id/SlicePosition"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/SliceSizeValue"
+                   android:layout_alignStart="@id/SliceSizeValue"
+                   android:text="@string/slice_position"
+                   android:textColor="@color/white"
+                   android:textSize="13sp"
+                   android:textStyle="bold" />
+
+               <EditText
+                   android:id="@+id/SlicePositionValue"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/SlicePosition"
+                   android:layout_alignStart="@id/SliceSize"
+                   android:layout_alignBottom="@id/PhantomToDetectorValue"
+                   android:background="@color/white"
+                   android:inputType="number"
+                   android:text="256"
+                   android:textSize="13sp" />
+
+               <TextView
+                   android:id="@+id/RotationSteps"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentTop="true"
+                   android:layout_marginStart="5dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginBottom="49dp"
+                   android:layout_toEndOf="@id/SliceSize"
+                   android:text="rotation step"
+                   android:textColor="@color/white"
+                   android:textSize="13sp"
+                   android:textStyle="bold" />
+
+               <EditText
+                   android:id="@+id/RotationStepsValue"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_alignStart="@id/RotationSteps"
+                   android:layout_alignBottom="@id/SliceSizeValue"
+                   android:background="@color/white"
+                   android:inputType="number"
+                   android:text="5"
+                   android:textSize="13sp" />
+           </RelativeLayout>
+
+           <TextView
+               android:id="@+id/Manual"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="2pt"
+               android:background="@color/black"
+               android:text="@string/OperationManual"
+               android:textColor="@color/white"/>
+       </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

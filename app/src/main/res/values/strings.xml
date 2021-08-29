@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">FDK backprojection</string>
+    <string name="start_backprojection">start backprojection</string>
+    <string name="napping">Backprojection is in progress!</string>
+    <string name="Source_To_Phantom">source to phantom</string>
+    <string name="Phantom_To_Detector">phantom to detector</string>
+    <string name="slice_size">slice size</string>
+    <string name="slice_position">slice position</string>
+    <string name="cancel_backprojection">cancel backprojection</string>
+    <string name="backprojection_is_finished">Backprojection is finished!</string>
+    <string name="OperationManual">
+        <br><b>\nShort Operation Manual:</b></br>
+
+        <br>\n\nSelect the proper recording and backprojection values for the <b>source_to_phantom</b>,
+        <b>phantom_to_detector</b> and <b>slice_size</b>. The <b>slice_size</b> corresponds to the size of the
+        Field of View for reconstructed cross section image. The <b>slice_position</b> value places
+        the FOV at the selected position along the Z axis. Reconstruction is taken place in
+        the plane parallel to the XY plane. The rotation_step says how often your original
+        X-ray projections, while rotating the coupled source and detector around the sample, are taken.
+        </br>
+
+        <br>\n\nDefault values are written in the corresponding fields. Everything but the <b>rotation_step</b> are
+        measured in points (voxels, or pixels). For now, the thickness of reconstructed slice is only 1 point.
+        </br>
+
+        <br>\n\nBackprojection is started by clicking the <b>START BACKPROJECTION</b> button. You can cancel the
+        reconstruction anytime by pressing the <b>CANCEL BACKPROJECTION</b> button. In both cases, the results
+        will be saved to the <b>/Downloads/</b> folder as <b>*.png</b> image with the name constructed from the word "slice" and
+        the current time stamp (something like "<b>slice_26072021124605.png</b>").
+        </br>
+
+        <br>\n\nFor all these to work, you should have projection files named <b> projection_0, projection_1, ...
+        , projection_365</b> in your <b>/Downloads/</b> folder. Some of these projections may be missing and
+        the algorithm will skip their processing.
+        </br>
+
+        <br>\n\nPlease contact me on <b>arman.kussainov@gmail.com</b>
+        if you do not have your own projections.
+        </br>
+
+        <br>\n\nUse this link to
+        <a href="https://drive.google.com/drive/folders/1V0_L1weGJERoL0FGQLJgI4iqSP2ciSPb?usp=sharing">GoogleDrive</a>
+        to download sample projections, taken with 1 degree step, with default parameters.
+        Google Drive interace allows you to download individual projections or
+        you can select all of them and download in bulk.
+        </br>
+
+    </string>
+</resources>
